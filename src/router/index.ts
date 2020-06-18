@@ -6,8 +6,26 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue')
+    name: 'layout',
+    redirect: '/index',
+    component: () => import(/* webpackChunkName: "layout" */ '@c/layout/index.vue'),
+    children: [
+      {
+        path: '/index',
+        name: 'home',
+        component: () => import(/* webpackChunkName: "home" */ '../views/home/index.vue')
+      },
+      {
+        path: '/user',
+        name: 'user',
+        component: () => import(/* webpackChunkName: "user" */ '../views/data/user/index.vue')
+      },
+      {
+        path: '/zb',
+        name: 'zb',
+        component: () => import(/* webpackChunkName: "zb" */ '../views/data/zb/index.vue')
+      }
+    ]
   }
 ]
 
