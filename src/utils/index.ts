@@ -22,6 +22,24 @@ export const formatTime = (date: number, type: string): string => {
 }
 
 // 重置对象里的键为空
-export const searchReset = (searchData = {}): object => {
+export const searchReset = (searchData: any): object => {
+  const type = (o: any) => {
+    const s = Object.prototype.toString.call(o)
+    return (s.match(/\[object (.*?)\]/) as any)[1].toLowerCase()
+  }
+
+  for (const key in searchData) {
+    const element = searchData[key]
+    const elementType = type(element)
+    if (elementType === 'object') {
+      searchData[key] = {}
+    } else if (elementType === 'array') {
+      searchData[key] = []
+    } else if (elementType === 'null') {
+      searchData[key] = null
+    } else {
+      searchData[key] = ''
+    }
+  }
   return searchData
 }

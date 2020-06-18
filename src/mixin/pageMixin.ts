@@ -1,5 +1,5 @@
 import { Vue, Component, Watch } from 'vue-property-decorator'
-// import { searchReset } from '@/utils'
+import { searchReset } from '@/utils'
 @Component
 export default class PageMixin extends Vue {
   [x: string]: any
@@ -32,7 +32,7 @@ export default class PageMixin extends Vue {
 
   //重置查询
   reset() {
-    // this.searchData = searchReset(this.searchData)
+    this.searchData = searchReset(this.searchData)
 
     this.pageNum = 0
     this.currentPage = 1
