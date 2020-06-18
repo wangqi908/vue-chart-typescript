@@ -1,0 +1,28 @@
+.my-dialog {
+  .el-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .el-form-item {
+    width: 44%;
+    min-width: 300px;
+  }
+  .table-box {
+    width: 100%;
+  }
+  .dialog-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .my-dialog .el-form-item {
+    width: 80%;
+    min-width: 300px;
+  }
+}

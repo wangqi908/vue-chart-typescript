@@ -17,33 +17,33 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
 import VeLine from 'v-charts/lib/histogram.common'
-import { chartZbReq } from '@api'
-export default {
-  components: { VeLine },
-  data() {
-    return {
-      chartData: {},
-      value: []
+import { chartZbReq } from '../../../api/index'
+@Component({
+  name: 'OnlineNumber',
+  components: { VeLine }
+})
+export default class OnlineNumber extends Vue {
+  chartData = {}
+  value = []
+  async getData(query = {}) {
+    const res: any = await chartZbReq(query)
+    const { onlineUserNumber } = res.data.data
+    if (onlineUserNumber.rows.length === 0) {
+      this.$message('无数据')
     }
-  },
-  methods: {
-    async getData(query = {}) {
-      const res = await chartZbReq(query)
-      let { onlineUserNumber } = res.data.data
-      if (onlineUserNumber.rows.length === 0) this.$message('无数据')
-      this.chartData = onlineUserNumber
-    },
-    change() {
-      let [startTime, endTime] = this.value
-      this.getData({ startTime, endTime })
-    },
-    reset() {
-      this.value = []
-      this.getData()
-    }
-  },
+    this.chartData = onlineUserNumber
+  }
+  change() {
+    const [startTime, endTime] = this.value
+    this.getData({ startTime, endTime })
+  }
+  reset() {
+    this.value = []
+    this.getData()
+  }
   created() {
     this.getData()
   }

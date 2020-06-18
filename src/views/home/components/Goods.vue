@@ -5,10 +5,15 @@
   </div>
 </template>
 
-<script>
+
+<script lang="ts">
 import VeLine from 'v-charts/lib/pie.common'
-export default {
-  props: ['data'],
+import { Component, Vue, Prop } from 'vue-property-decorator'
+@Component({
+  name: 'Goods',
   components: { VeLine }
+})
+export default class Goods extends Vue {
+  @Prop() data!: {}
 }
 </script>

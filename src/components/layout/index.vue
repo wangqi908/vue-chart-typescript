@@ -1,8 +1,10 @@
 <template>
   <div class="layout">
-    <Menu />
+    <Menu class="aside" />
     <div class="main">
-      <router-view />
+      <transition name="fade" mode="out-in">
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>
@@ -14,5 +16,12 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
+.layout {
+  display: flex;
+}
+.aside {
+  overflow: auto;
+  width: 200px;
+}
 </style>

@@ -17,7 +17,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
   name: 'Menu'
 })
 export default class Menu extends Vue {
-  activeIndex = '1'
+  activeIndex = ''
   handleSelect(name: string) {
     if (this.$route.name === name) return
     this.$router.push({ name })
