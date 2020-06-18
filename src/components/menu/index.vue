@@ -1,14 +1,12 @@
 <template>
-  <div class="home">
-    <el-menu :default-active="activeIndex" @select="handleSelect">
-      <el-menu-item index="home">统计</el-menu-item>
-      <el-submenu index="data">
-        <template slot="title">数据</template>
-        <el-menu-item index="user">用户数据</el-menu-item>
-        <el-menu-item index="zb">直播数据</el-menu-item>
-      </el-submenu>
-    </el-menu>
-  </div>
+  <el-menu :default-active="activeIndex" @select="handleSelect">
+    <el-menu-item index="home">统计</el-menu-item>
+    <el-submenu index="data">
+      <template slot="title">数据</template>
+      <el-menu-item index="user">用户数据</el-menu-item>
+      <el-menu-item index="zb">直播数据</el-menu-item>
+    </el-submenu>
+  </el-menu>
 </template>
 
 <script lang="ts">
@@ -31,3 +29,9 @@ export default class Menu extends Vue {
   }
 }
 </script>
+
+<style lang="scss" >
+.el-submenu .el-menu-item {
+  min-width: unset;
+}
+</style>

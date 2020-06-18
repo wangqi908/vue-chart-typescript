@@ -32,7 +32,7 @@ export default class OnlineNumber extends Vue {
     const res: any = await chartZbReq(query)
     const { onlineUserNumber } = res.data.data
     if (onlineUserNumber.rows.length === 0) {
-      this.$message('无数据')
+      Vue.prototype.$message('无数据')
     }
     this.chartData = onlineUserNumber
   }

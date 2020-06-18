@@ -19,9 +19,16 @@ export default {
 <style lang='scss' scoped>
 .layout {
   display: flex;
+  height: 100%;
+  width: 100%;
 }
 .aside {
   overflow: auto;
   width: 200px;
+  height: 100%;
+}
+.main {
+  flex: 1;
+  overflow: auto;
 }
 </style>
