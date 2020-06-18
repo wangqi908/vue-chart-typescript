@@ -29,6 +29,7 @@ export default class OnlineNumber extends Vue {
   chartData = {}
   value = []
   async getData(query = {}) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const res: any = await chartZbReq(query)
     const { onlineUserNumber } = res.data.data
     if (onlineUserNumber.rows.length === 0) {
