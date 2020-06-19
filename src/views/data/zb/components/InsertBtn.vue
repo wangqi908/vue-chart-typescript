@@ -76,7 +76,7 @@ export default class InsertBtn extends Vue {
         ;(this.$refs.upload as any).value = ''
         this.upload(outputs)
       } catch (e) {
-        console.log(e)
+        // console.log(e)
         return false
       }
     }
