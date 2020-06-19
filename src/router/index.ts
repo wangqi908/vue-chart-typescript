@@ -31,6 +31,16 @@ const routes: Array<RouteConfig> = [
         component: () => import(/* webpackChunkName: "test" */ '../views/test/index.vue')
       }
     ]
+  },
+  {
+    path: '/404',
+    name: 'notFound',
+    component: () => import(/* webpackChunkName: "notFound" */ '../views/error/notFound.vue'),
+    meta: { title: 'notFound' }
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 

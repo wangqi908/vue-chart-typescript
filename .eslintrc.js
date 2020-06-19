@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
