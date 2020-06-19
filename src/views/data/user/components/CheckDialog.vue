@@ -26,31 +26,25 @@
   </el-dialog>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Prop } from 'vue-property-decorator'
 import { userViewReq } from '@/api'
-import toggleDialogMixin from '@/mixin/toggleDialogMixin'
+import ToggleDialogMixin from '@/mixin/toggleDialogMixin'
 
-export default {
-  mixins: [toggleDialogMixin],
-  props: {
-    id: {
-      type: [Number, String],
-      required: true
+@Component
+export default class CheckDialog extends ToggleDialogMixin {
+  @Prop()
+  id!: number
+
+  ruleForm = {}
+
+  async getInfo() {
+    const res: any = await userViewReq({ _id: this.id })
+    if (res.data.status === 200) {
+      this.ruleForm = res.data.data
     }
-  },
-  data() {
-    return {
-      ruleForm: {}
-    }
-  },
-  methods: {
-    async getInfo() {
-      const res = await userViewReq({ _id: this.id })
-      if (res.data.status === 200) {
-        this.ruleForm = res.data.data
-      }
-    }
-  },
+  }
+
   created() {
     this.getInfo()
   }
