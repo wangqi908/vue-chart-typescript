@@ -38,8 +38,7 @@ export default class Home extends Vue {
   mapData = {}
   goodsData = {}
   async getUserList() {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const res: any = await chartUserReq()
+    const res = await chartUserReq()
     const { registerData, mapData, goodsData } = res.data.data
     this.registerData = registerData
     this.mapData = mapData

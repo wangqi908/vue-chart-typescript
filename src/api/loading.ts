@@ -1,6 +1,6 @@
 import { Loading } from 'element-ui'
 
-let needLoadingRequestCount: number = 0
+let needLoadingRequestCount = 0
 
 let loading: any = null
 

@@ -26,7 +26,7 @@ export default class CheckDialog extends ToggleDialogMixin {
   ruleForm = {}
 
   async getInfo() {
-    const res: any = await zbViewReq({ _id: this.id })
+    const res = await zbViewReq({ _id: this.id })
     if (res.data.status === 200) {
       this.ruleForm = res.data.data
     }

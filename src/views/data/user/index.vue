@@ -1,6 +1,6 @@
 <template>
   <div class="page-box">
-    <SearchBox :propSearchData.sync="searchData">
+    <SearchBox :prop-search-data.sync="searchData">
       <div class="getCenter">
         <el-button type="primary" @click="search">搜索</el-button>
         <el-button type="primary" @click="reset">重置</el-button>
@@ -81,7 +81,7 @@ export default class User extends PageMixin {
         nickname
       }
     }
-    const res: any = await userPageReq(dataObj)
+    const res = await userPageReq(dataObj)
     if (res.data.status == 200) {
       this.info = res.data.data
     }

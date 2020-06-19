@@ -39,7 +39,7 @@ export default class CheckDialog extends ToggleDialogMixin {
   ruleForm = {}
 
   async getInfo() {
-    const res: any = await userViewReq({ _id: this.id })
+    const res = await userViewReq({ _id: this.id })
     if (res.data.status === 200) {
       this.ruleForm = res.data.data
     }

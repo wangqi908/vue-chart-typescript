@@ -1,7 +1,6 @@
 <template>
   <div>
     <p>注册用户</p>
-    <!-- <ve-line :data="data"></ve-line> -->
     <VeLine :data="data"></VeLine>
   </div>
 </template>

@@ -13,28 +13,28 @@ import XLSX from 'xlsx'
 import { userInsertReq } from '@/api'
 
 interface OutputInter {
-  [key: string]: any;
-  userId: string;
-  nickname: string;
-  phone: string;
-  latestNumber: string;
-  email: string;
-  wechatNo: string;
-  birthday: string;
-  gender: string;
-  age: string;
-  language: string;
-  country: string;
-  province: string;
-  city: string;
-  address: string;
-  industry: string;
-  company: string;
-  interest: string;
-  registerTime: number;
-  consumptionAmount: string;
-  lastConsumptionTime: number;
-  goods: string;
+  [key: string]: any
+  userId: string
+  nickname: string
+  phone: string
+  latestNumber: string
+  email: string
+  wechatNo: string
+  birthday: string
+  gender: string
+  age: string
+  language: string
+  country: string
+  province: string
+  city: string
+  address: string
+  industry: string
+  company: string
+  interest: string
+  registerTime: number
+  consumptionAmount: string
+  lastConsumptionTime: number
+  goods: string
 }
 
 @Component
@@ -110,9 +110,9 @@ export default class InsertBtn extends Vue {
   }
 
   async upload(list: Array<OutputInter>) {
-    const res: any = await userInsertReq({ list })
+    const res = await userInsertReq({ list })
     if (res.data.status === 200) {
-      (this as any).$message.success('导入成功')
+      ;(this as any).$message.success('导入成功')
       this.$emit('sucess')
     }
   }

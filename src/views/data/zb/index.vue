@@ -80,7 +80,7 @@ export default class Zb extends PageMixin {
         username
       }
     }
-    const res: any = await zbPageReq(dataObj)
+    const res = await zbPageReq(dataObj)
     if (res.data.status == 200) {
       this.info = res.data.data
     }
