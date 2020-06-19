@@ -7,7 +7,9 @@
       </div>
     </SearchBox>
     <div class="table">
-      <div class="table-btn"></div>
+      <div class="table-btn">
+        <InsertBtn @sucess="sucess" />
+      </div>
       <el-table :data="info.list" style="width: 100%">
         <el-table-column prop="username" label="用户姓名" show-overflow-tooltip></el-table-column>
         <el-table-column prop="nickname" label="昵称" show-overflow-tooltip></el-table-column>
@@ -44,12 +46,12 @@
 <script lang="ts">
 import { Component } from 'vue-property-decorator'
 import { zbPageReq } from '@/api/index'
-import { CheckDialog } from './components'
+import { CheckDialog, InsertBtn } from './components'
 import PageMixin from '../../../mixin/pageMixin'
 
 @Component({
   name: 'Zb',
-  components: { CheckDialog }
+  components: { CheckDialog, InsertBtn }
 })
 export default class Zb extends PageMixin {
   searchData = {

@@ -50,12 +50,12 @@
 <script lang="ts">
 import { Component } from 'vue-property-decorator'
 import { userPageReq } from '@/api/index'
-import { CheckDialog } from './components'
+import { CheckDialog, InsertBtn } from './components'
 import PageMixin from '../../../mixin/pageMixin'
 
 @Component({
   name: 'User',
-  components: { CheckDialog }
+  components: { CheckDialog, InsertBtn }
 })
 export default class User extends PageMixin {
   searchData = {
